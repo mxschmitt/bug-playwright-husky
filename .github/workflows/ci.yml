@@ -15,6 +15,7 @@ jobs:
     container: mcr.microsoft.com/playwright:focal
     steps:
       - uses: actions/checkout@v2
+      - run: apt-get update && apt-get install -y sudo
       - name: Setup tmate session
         uses: mxschmitt/action-tmate@v3
       - run: npm ci --no-optional --no-audit --prefer-offline --progress=false
